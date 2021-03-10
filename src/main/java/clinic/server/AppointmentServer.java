@@ -1,8 +1,7 @@
-package appointment.server;
+package clinic.server;
 
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
-import sun.awt.windows.ThemeReader;
 
 import java.io.IOException;
 

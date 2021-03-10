@@ -1,4 +1,4 @@
-package appointment.client;
+package clinic.client;
 
 import com.proto.appointment.Appointment;
 import com.proto.appointment.AppointmentRequest;
