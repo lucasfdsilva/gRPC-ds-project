@@ -10,9 +10,9 @@
       <title-color color="-4473925"/>
     </border>
     <children>
-      <component id="4dca3" class="javax.swing.JTextField" binding="textField1" default-binding="true">
+      <component id="4dca3" class="javax.swing.JTextField" binding="firstNameInput">
         <constraints>
-          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="2" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
           </grid>
         </constraints>
@@ -23,25 +23,25 @@
           <grid row="9" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
         </constraints>
       </vspacer>
-      <component id="81132" class="javax.swing.JTextField" binding="textField2" default-binding="true">
+      <component id="81132" class="javax.swing.JTextField" binding="lastNameInput">
         <constraints>
-          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="2" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
           </grid>
         </constraints>
         <properties/>
       </component>
-      <component id="a2662" class="javax.swing.JTextField" binding="textField3" default-binding="true">
+      <component id="a2662" class="javax.swing.JTextField" binding="dateInput">
         <constraints>
-          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="2" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
           </grid>
         </constraints>
         <properties/>
       </component>
-      <component id="23e36" class="javax.swing.JTextField" binding="textField4" default-binding="true">
+      <component id="23e36" class="javax.swing.JTextField" binding="timeInput">
         <constraints>
-          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="2" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
           </grid>
         </constraints>
@@ -49,7 +49,7 @@
       </component>
       <component id="954ce" class="javax.swing.JButton" binding="createAppointmentButton" default-binding="true">
         <constraints>
-          <grid row="1" column="1" row-span="4" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="1" column="1" row-span="4" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="1" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Create Appointment"/>
@@ -57,23 +57,23 @@
       </component>
       <component id="ab308" class="javax.swing.JLabel">
         <constraints>
-          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="2" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Service 1 - Appointment"/>
         </properties>
       </component>
-      <component id="5cfdd" class="javax.swing.JTextField" binding="textField5" default-binding="true">
+      <component id="5cfdd" class="javax.swing.JTextField" binding="usernameInput">
         <constraints>
-          <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+          <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="2" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
           </grid>
         </constraints>
         <properties/>
       </component>
-      <component id="63b03" class="javax.swing.JTextField" binding="textField6" default-binding="true">
+      <component id="63b03" class="javax.swing.JTextField" binding="passwordInput">
         <constraints>
-          <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+          <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="2" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
           </grid>
         </constraints>
@@ -81,7 +81,7 @@
       </component>
       <component id="37188" class="javax.swing.JButton" binding="loginButton" default-binding="true">
         <constraints>
-          <grid row="7" column="1" row-span="2" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="7" column="1" row-span="2" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="1" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Login"/>
@@ -89,11 +89,20 @@
       </component>
       <component id="3d218" class="javax.swing.JLabel">
         <constraints>
-          <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="2" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Service 2 - User Authentication"/>
         </properties>
+      </component>
+      <component id="c2b93" class="javax.swing.JSeparator">
+        <constraints>
+          <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="10" height="10"/>
+            <maximum-size width="-1" height="50"/>
+          </grid>
+        </constraints>
+        <properties/>
       </component>
     </children>
   </grid>

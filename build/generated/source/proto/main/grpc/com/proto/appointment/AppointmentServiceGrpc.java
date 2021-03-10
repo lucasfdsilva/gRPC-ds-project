@@ -6,7 +6,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler (version 1.36.0)",
-    comments = "Source: appointment/appointment.proto")
+    comments = "Source: clinic/appointment.proto")
 public final class AppointmentServiceGrpc {
 
   private AppointmentServiceGrpc() {}
