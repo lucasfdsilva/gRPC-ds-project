@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package appointment;
+
+option java_package = "com.proto.appointment";
+option java_multiple_files = true;
+
+message Appointment {
+  string first_name = 1;
+  string last_name = 2;
+  string appointment_date = 3;
+  string appointment_time = 4;
+}
+
+message AppointmentRequest {
+  Appointment appointment = 1;
+}
+
+message AppointmentResponse {
+  string result = 1;
+}
+
+service AppointmentService {
+  rpc Appointment(AppointmentRequest) returns (AppointmentResponse) {};
+}
