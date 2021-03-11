@@ -23,6 +23,7 @@ public class ClientGUI {
     private JTextField usernameInput;
     private JTextField passwordInput;
     private JButton viewAllAppointmentsButton;
+    private JButton deleteAppointmentButton;
 
     public ClientGUI() {
 
@@ -114,8 +115,13 @@ public class ClientGUI {
         });
 
 
-
-
+        deleteAppointmentButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                DeleteAppointmentGUI deleteAppointmentGUI = new DeleteAppointmentGUI();
+                deleteAppointmentGUI.startup();
+            }
+        });
 
 
         //Service 2 (Authentication) Button invocation
@@ -126,14 +132,16 @@ public class ClientGUI {
             }
         });
 
+
     }
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("Lucas' Clinic Services");
         frame.setContentPane(new ClientGUI().mainPanel);
-        frame.setPreferredSize(new Dimension(1200,800));
+        frame.setPreferredSize(new Dimension(800,600));
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
+        frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }
 }

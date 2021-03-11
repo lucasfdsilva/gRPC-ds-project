@@ -68,6 +68,53 @@ public class AppointmentServiceImpl extends AppointmentServiceGrpc.AppointmentSe
             // Complete the RPC call
             responseObserver.onCompleted();
         }
+    }
 
+    @Override
+    public void deleteAppointment(DeleteAppointmentRequest request, StreamObserver<DeleteAppointmentResponse> responseObserver) {
+
+        if(appointmentsList.size() == 0){
+            // Create the response if there are no appointments registered
+            String resultNoAppointments = "There are no registered appointments.";
+
+            DeleteAppointmentResponse response = DeleteAppointmentResponse.newBuilder()
+                    .setResult(resultNoAppointments)
+                    .build();
+            // Send Response
+            responseObserver.onNext(response);
+            // Complete the RPC call
+            responseObserver.onCompleted();
+        }
+
+        for (int i = 0; i <= appointmentsList.size(); i++){
+            Appointment appointmentDetails = (Appointment) appointmentsList.get(i);
+
+            if(appointmentDetails.getId() == request.getId()){
+                appointmentsList.remove(i);
+
+                String result = "Appointment ID (" + request.getId() + ") Deleted Successfully.";
+                DeleteAppointmentResponse response = DeleteAppointmentResponse.newBuilder()
+                        .setResult(result)
+                        .build();
+
+                // Send Response
+                responseObserver.onNext(response);
+
+                // Complete the RPC call
+                responseObserver.onCompleted();
+            }
+        }
+
+        //Response if no appointment with specified ID was found
+        String result = "No appointment with ID (" + request.getId() + ") was found";
+        DeleteAppointmentResponse response = DeleteAppointmentResponse.newBuilder()
+                .setResult(result)
+                .build();
+
+        // Send Response
+        responseObserver.onNext(response);
+
+        // Complete the RPC call
+        responseObserver.onCompleted();
     }
 }

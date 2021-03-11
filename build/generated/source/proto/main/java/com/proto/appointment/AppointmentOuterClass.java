@@ -39,6 +39,16 @@ public final class AppointmentOuterClass {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_appointment_ViewAppointmentsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_appointment_DeleteAppointmentRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_appointment_DeleteAppointmentRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_appointment_DeleteAppointmentResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_appointment_DeleteAppointmentResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -56,14 +66,18 @@ public final class AppointmentOuterClass {
       "\001(\0132\030.appointment.Appointment\"(\n\026NewAppo" +
       "intmentResponse\022\016\n\006result\030\001 \001(\t\"*\n\027ViewA" +
       "ppointmentsRequest\022\017\n\007request\030\001 \001(\t\"*\n\030V" +
-      "iewAppointmentsResponse\022\016\n\006result\030\001 \001(\t2" +
-      "\324\001\n\022AppointmentService\022[\n\016newAppointment" +
-      "\022\".appointment.NewAppointmentRequest\032#.a" +
-      "ppointment.NewAppointmentResponse\"\000\022a\n\020v" +
-      "iewAppointments\022$.appointment.ViewAppoin" +
-      "tmentsRequest\032%.appointment.ViewAppointm" +
-      "entsResponse0\001B\031\n\025com.proto.appointmentP" +
-      "\001b\006proto3"
+      "iewAppointmentsResponse\022\016\n\006result\030\001 \001(\t\"" +
+      "&\n\030DeleteAppointmentRequest\022\n\n\002id\030\001 \001(\005\"" +
+      "+\n\031DeleteAppointmentResponse\022\016\n\006result\030\001" +
+      " \001(\t2\270\002\n\022AppointmentService\022[\n\016newAppoin" +
+      "tment\022\".appointment.NewAppointmentReques" +
+      "t\032#.appointment.NewAppointmentResponse\"\000" +
+      "\022a\n\020viewAppointments\022$.appointment.ViewA" +
+      "ppointmentsRequest\032%.appointment.ViewApp" +
+      "ointmentsResponse0\001\022b\n\021deleteAppointment" +
+      "\022%.appointment.DeleteAppointmentRequest\032" +
+      "&.appointment.DeleteAppointmentResponseB" +
+      "\031\n\025com.proto.appointmentP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -98,6 +112,18 @@ public final class AppointmentOuterClass {
     internal_static_appointment_ViewAppointmentsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_appointment_ViewAppointmentsResponse_descriptor,
+        new java.lang.String[] { "Result", });
+    internal_static_appointment_DeleteAppointmentRequest_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_appointment_DeleteAppointmentRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_appointment_DeleteAppointmentRequest_descriptor,
+        new java.lang.String[] { "Id", });
+    internal_static_appointment_DeleteAppointmentResponse_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_appointment_DeleteAppointmentResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_appointment_DeleteAppointmentResponse_descriptor,
         new java.lang.String[] { "Result", });
   }
 

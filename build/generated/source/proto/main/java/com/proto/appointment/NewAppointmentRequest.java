@@ -4,6 +4,10 @@
 package com.proto.appointment;
 
 /**
+ * <pre>
+ *Create Appointment Method
+ * </pre>
+ *
  * Protobuf type {@code appointment.NewAppointmentRequest}
  */
 public final class NewAppointmentRequest extends
@@ -280,6 +284,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   *Create Appointment Method
+   * </pre>
+   *
    * Protobuf type {@code appointment.NewAppointmentRequest}
    */
   public static final class Builder extends
