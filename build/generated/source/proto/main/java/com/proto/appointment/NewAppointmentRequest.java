@@ -4,25 +4,25 @@
 package com.proto.appointment;
 
 /**
- * Protobuf type {@code appointment.AppointmentRequest}
+ * Protobuf type {@code appointment.NewAppointmentRequest}
  */
-public final class AppointmentRequest extends
+public final class NewAppointmentRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:appointment.AppointmentRequest)
-    AppointmentRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:appointment.NewAppointmentRequest)
+    NewAppointmentRequestOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use AppointmentRequest.newBuilder() to construct.
-  private AppointmentRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use NewAppointmentRequest.newBuilder() to construct.
+  private NewAppointmentRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private AppointmentRequest() {
+  private NewAppointmentRequest() {
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new AppointmentRequest();
+    return new NewAppointmentRequest();
   }
 
   @java.lang.Override
@@ -30,7 +30,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private AppointmentRequest(
+  private NewAppointmentRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -90,7 +90,7 @@ private static final long serialVersionUID = 0L;
       internalGetFieldAccessorTable() {
     return com.proto.appointment.AppointmentOuterClass.internal_static_appointment_NewAppointmentRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.proto.appointment.AppointmentRequest.class, com.proto.appointment.AppointmentRequest.Builder.class);
+            com.proto.appointment.NewAppointmentRequest.class, com.proto.appointment.NewAppointmentRequest.Builder.class);
   }
 
   public static final int APPOINTMENT_FIELD_NUMBER = 1;
@@ -159,10 +159,10 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.proto.appointment.AppointmentRequest)) {
+    if (!(obj instanceof com.proto.appointment.NewAppointmentRequest)) {
       return super.equals(obj);
     }
-    com.proto.appointment.AppointmentRequest other = (com.proto.appointment.AppointmentRequest) obj;
+    com.proto.appointment.NewAppointmentRequest other = (com.proto.appointment.NewAppointmentRequest) obj;
 
     if (hasAppointment() != other.hasAppointment()) return false;
     if (hasAppointment()) {
@@ -189,69 +189,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.proto.appointment.AppointmentRequest parseFrom(
+  public static com.proto.appointment.NewAppointmentRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.proto.appointment.AppointmentRequest parseFrom(
+  public static com.proto.appointment.NewAppointmentRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.proto.appointment.AppointmentRequest parseFrom(
+  public static com.proto.appointment.NewAppointmentRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.proto.appointment.AppointmentRequest parseFrom(
+  public static com.proto.appointment.NewAppointmentRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.proto.appointment.AppointmentRequest parseFrom(byte[] data)
+  public static com.proto.appointment.NewAppointmentRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.proto.appointment.AppointmentRequest parseFrom(
+  public static com.proto.appointment.NewAppointmentRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.proto.appointment.AppointmentRequest parseFrom(java.io.InputStream input)
+  public static com.proto.appointment.NewAppointmentRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.proto.appointment.AppointmentRequest parseFrom(
+  public static com.proto.appointment.NewAppointmentRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.proto.appointment.AppointmentRequest parseDelimitedFrom(java.io.InputStream input)
+  public static com.proto.appointment.NewAppointmentRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.proto.appointment.AppointmentRequest parseDelimitedFrom(
+  public static com.proto.appointment.NewAppointmentRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.proto.appointment.AppointmentRequest parseFrom(
+  public static com.proto.appointment.NewAppointmentRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.proto.appointment.AppointmentRequest parseFrom(
+  public static com.proto.appointment.NewAppointmentRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -264,7 +264,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.proto.appointment.AppointmentRequest prototype) {
+  public static Builder newBuilder(com.proto.appointment.NewAppointmentRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -280,12 +280,12 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code appointment.AppointmentRequest}
+   * Protobuf type {@code appointment.NewAppointmentRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:appointment.AppointmentRequest)
-      com.proto.appointment.AppointmentRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:appointment.NewAppointmentRequest)
+      com.proto.appointment.NewAppointmentRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return com.proto.appointment.AppointmentOuterClass.internal_static_appointment_NewAppointmentRequest_descriptor;
@@ -296,10 +296,10 @@ private static final long serialVersionUID = 0L;
         internalGetFieldAccessorTable() {
       return com.proto.appointment.AppointmentOuterClass.internal_static_appointment_NewAppointmentRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.proto.appointment.AppointmentRequest.class, com.proto.appointment.AppointmentRequest.Builder.class);
+              com.proto.appointment.NewAppointmentRequest.class, com.proto.appointment.NewAppointmentRequest.Builder.class);
     }
 
-    // Construct using com.proto.appointment.AppointmentRequest.newBuilder()
+    // Construct using com.proto.appointment.NewAppointmentRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -333,13 +333,13 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.proto.appointment.AppointmentRequest getDefaultInstanceForType() {
-      return com.proto.appointment.AppointmentRequest.getDefaultInstance();
+    public com.proto.appointment.NewAppointmentRequest getDefaultInstanceForType() {
+      return com.proto.appointment.NewAppointmentRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.proto.appointment.AppointmentRequest build() {
-      com.proto.appointment.AppointmentRequest result = buildPartial();
+    public com.proto.appointment.NewAppointmentRequest build() {
+      com.proto.appointment.NewAppointmentRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -347,8 +347,8 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.proto.appointment.AppointmentRequest buildPartial() {
-      com.proto.appointment.AppointmentRequest result = new com.proto.appointment.AppointmentRequest(this);
+    public com.proto.appointment.NewAppointmentRequest buildPartial() {
+      com.proto.appointment.NewAppointmentRequest result = new com.proto.appointment.NewAppointmentRequest(this);
       if (appointmentBuilder_ == null) {
         result.appointment_ = appointment_;
       } else {
@@ -392,16 +392,16 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.proto.appointment.AppointmentRequest) {
-        return mergeFrom((com.proto.appointment.AppointmentRequest)other);
+      if (other instanceof com.proto.appointment.NewAppointmentRequest) {
+        return mergeFrom((com.proto.appointment.NewAppointmentRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.proto.appointment.AppointmentRequest other) {
-      if (other == com.proto.appointment.AppointmentRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.proto.appointment.NewAppointmentRequest other) {
+      if (other == com.proto.appointment.NewAppointmentRequest.getDefaultInstance()) return this;
       if (other.hasAppointment()) {
         mergeAppointment(other.getAppointment());
       }
@@ -420,11 +420,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.proto.appointment.AppointmentRequest parsedMessage = null;
+      com.proto.appointment.NewAppointmentRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.proto.appointment.AppointmentRequest) e.getUnfinishedMessage();
+        parsedMessage = (com.proto.appointment.NewAppointmentRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -565,41 +565,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:appointment.AppointmentRequest)
+    // @@protoc_insertion_point(builder_scope:appointment.NewAppointmentRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:appointment.AppointmentRequest)
-  private static final com.proto.appointment.AppointmentRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:appointment.NewAppointmentRequest)
+  private static final com.proto.appointment.NewAppointmentRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.proto.appointment.AppointmentRequest();
+    DEFAULT_INSTANCE = new com.proto.appointment.NewAppointmentRequest();
   }
 
-  public static com.proto.appointment.AppointmentRequest getDefaultInstance() {
+  public static com.proto.appointment.NewAppointmentRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<AppointmentRequest>
-      PARSER = new com.google.protobuf.AbstractParser<AppointmentRequest>() {
+  private static final com.google.protobuf.Parser<NewAppointmentRequest>
+      PARSER = new com.google.protobuf.AbstractParser<NewAppointmentRequest>() {
     @java.lang.Override
-    public AppointmentRequest parsePartialFrom(
+    public NewAppointmentRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new AppointmentRequest(input, extensionRegistry);
+      return new NewAppointmentRequest(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<AppointmentRequest> parser() {
+  public static com.google.protobuf.Parser<NewAppointmentRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<AppointmentRequest> getParserForType() {
+  public com.google.protobuf.Parser<NewAppointmentRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.proto.appointment.AppointmentRequest getDefaultInstanceForType() {
+  public com.proto.appointment.NewAppointmentRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

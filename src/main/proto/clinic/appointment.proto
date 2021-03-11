@@ -13,11 +13,11 @@ message Appointment {
   string appointment_time = 5;
 }
 
-message AppointmentRequest {
+message NewAppointmentRequest {
   Appointment appointment = 1;
 }
 
-message AppointmentResponse {
+message NewAppointmentResponse {
   string result = 1;
 }
 
@@ -30,7 +30,7 @@ message ViewAppointmentsResponse {
 }
 
 service AppointmentService {
-  rpc newAppointment(AppointmentRequest) returns (AppointmentResponse) {};
+  rpc newAppointment(NewAppointmentRequest) returns (NewAppointmentResponse) {};
 
   rpc viewAppointments(ViewAppointmentsRequest) returns (stream ViewAppointmentsResponse);
 }

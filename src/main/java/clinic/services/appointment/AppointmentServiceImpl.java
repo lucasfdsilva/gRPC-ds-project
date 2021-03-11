@@ -9,7 +9,7 @@ public class AppointmentServiceImpl extends AppointmentServiceGrpc.AppointmentSe
     ArrayList<Appointment> appointmentsList = new ArrayList<Appointment>();
 
     @Override
-    public void newAppointment(AppointmentRequest request, StreamObserver<AppointmentResponse> responseObserver) {
+    public void newAppointment(NewAppointmentRequest request, StreamObserver<NewAppointmentResponse> responseObserver) {
         // Extract the field from the request
         Appointment appointment = request.getAppointment();
 
@@ -22,7 +22,7 @@ public class AppointmentServiceImpl extends AppointmentServiceGrpc.AppointmentSe
         // Create the response
         String result = "Hi " + appointment.getFirstName() + ". Your Appointment was registered successfully. Appointment ID: " + appointment.getId();
 
-        AppointmentResponse response = AppointmentResponse.newBuilder()
+        NewAppointmentResponse response = NewAppointmentResponse.newBuilder()
                 .setResult(result)
                 .build();
 

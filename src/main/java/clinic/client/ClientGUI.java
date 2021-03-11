@@ -69,15 +69,15 @@ public class ClientGUI {
                         .build();
 
                 System.out.println("Defining a new request using the appointment information provided");
-                AppointmentRequest appointmentRequest = AppointmentRequest.newBuilder()
+                NewAppointmentRequest newAppointmentRequest = NewAppointmentRequest.newBuilder()
                         .setAppointment(appointment)
                         .build();
 
                 System.out.println("Sending & Receiving request to the server...");
-                AppointmentResponse appointmentResponse = appointmentClient.newAppointment(appointmentRequest);
+                NewAppointmentResponse newAppointmentResponse = appointmentClient.newAppointment(newAppointmentRequest);
 
-                System.out.println("Server Response: " + appointmentResponse.getResult());
-                JOptionPane.showMessageDialog(null, "Server Response: " + appointmentResponse.getResult());
+                System.out.println("Server Response: " + newAppointmentResponse.getResult());
+                JOptionPane.showMessageDialog(null, "Server Response: " + newAppointmentResponse.getResult());
 
                 System.out.println("Shutting down this channel");
                 channel.shutdown();
@@ -107,6 +107,9 @@ public class ClientGUI {
                         .forEachRemaining(viewAppointmentsResponse -> {
                             System.out.println(viewAppointmentsResponse.getResult());
                         });
+
+                System.out.println("Shutting down this channel");
+                channel.shutdown();
             }
         });
 

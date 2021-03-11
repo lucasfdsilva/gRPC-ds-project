@@ -1,7 +1,5 @@
 package com.proto.appointment;
 
-import java.util.Iterator;
-
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 
 /**
@@ -16,29 +14,29 @@ public final class AppointmentServiceGrpc {
   public static final String SERVICE_NAME = "appointment.AppointmentService";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<com.proto.appointment.AppointmentRequest,
-      com.proto.appointment.AppointmentResponse> getNewAppointmentMethod;
+  private static volatile io.grpc.MethodDescriptor<com.proto.appointment.NewAppointmentRequest,
+      com.proto.appointment.NewAppointmentResponse> getNewAppointmentMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "newAppointment",
-      requestType = com.proto.appointment.AppointmentRequest.class,
-      responseType = com.proto.appointment.AppointmentResponse.class,
+      requestType = com.proto.appointment.NewAppointmentRequest.class,
+      responseType = com.proto.appointment.NewAppointmentResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.proto.appointment.AppointmentRequest,
-      com.proto.appointment.AppointmentResponse> getNewAppointmentMethod() {
-    io.grpc.MethodDescriptor<com.proto.appointment.AppointmentRequest, com.proto.appointment.AppointmentResponse> getNewAppointmentMethod;
+  public static io.grpc.MethodDescriptor<com.proto.appointment.NewAppointmentRequest,
+      com.proto.appointment.NewAppointmentResponse> getNewAppointmentMethod() {
+    io.grpc.MethodDescriptor<com.proto.appointment.NewAppointmentRequest, com.proto.appointment.NewAppointmentResponse> getNewAppointmentMethod;
     if ((getNewAppointmentMethod = AppointmentServiceGrpc.getNewAppointmentMethod) == null) {
       synchronized (AppointmentServiceGrpc.class) {
         if ((getNewAppointmentMethod = AppointmentServiceGrpc.getNewAppointmentMethod) == null) {
           AppointmentServiceGrpc.getNewAppointmentMethod = getNewAppointmentMethod =
-              io.grpc.MethodDescriptor.<com.proto.appointment.AppointmentRequest, com.proto.appointment.AppointmentResponse>newBuilder()
+              io.grpc.MethodDescriptor.<com.proto.appointment.NewAppointmentRequest, com.proto.appointment.NewAppointmentResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "newAppointment"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.proto.appointment.AppointmentRequest.getDefaultInstance()))
+                  com.proto.appointment.NewAppointmentRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.proto.appointment.AppointmentResponse.getDefaultInstance()))
+                  com.proto.appointment.NewAppointmentResponse.getDefaultInstance()))
               .setSchemaDescriptor(new AppointmentServiceMethodDescriptorSupplier("newAppointment"))
               .build();
         }
@@ -128,15 +126,15 @@ public final class AppointmentServiceGrpc {
 
     /**
      */
-    public void newAppointment(com.proto.appointment.AppointmentRequest request,
-        io.grpc.stub.StreamObserver<com.proto.appointment.AppointmentResponse> responseObserver) {
+    public void newAppointment(com.proto.appointment.NewAppointmentRequest request,
+        io.grpc.stub.StreamObserver<com.proto.appointment.NewAppointmentResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getNewAppointmentMethod(), responseObserver);
     }
 
     /**
      */
     public void viewAppointments(com.proto.appointment.ViewAppointmentsRequest request,
-        io.grpc.stub.StreamObserver<com.proto.appointment.ViewAppointmentsResponse> responseObserver) throws InterruptedException {
+        io.grpc.stub.StreamObserver<com.proto.appointment.ViewAppointmentsResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getViewAppointmentsMethod(), responseObserver);
     }
 
@@ -146,8 +144,8 @@ public final class AppointmentServiceGrpc {
             getNewAppointmentMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                com.proto.appointment.AppointmentRequest,
-                com.proto.appointment.AppointmentResponse>(
+                com.proto.appointment.NewAppointmentRequest,
+                com.proto.appointment.NewAppointmentResponse>(
                   this, METHODID_NEW_APPOINTMENT)))
           .addMethod(
             getViewAppointmentsMethod(),
@@ -176,8 +174,8 @@ public final class AppointmentServiceGrpc {
 
     /**
      */
-    public void newAppointment(com.proto.appointment.AppointmentRequest request,
-        io.grpc.stub.StreamObserver<com.proto.appointment.AppointmentResponse> responseObserver) {
+    public void newAppointment(com.proto.appointment.NewAppointmentRequest request,
+        io.grpc.stub.StreamObserver<com.proto.appointment.NewAppointmentResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getNewAppointmentMethod(), getCallOptions()), request, responseObserver);
     }
@@ -207,16 +205,15 @@ public final class AppointmentServiceGrpc {
 
     /**
      */
-    public com.proto.appointment.AppointmentResponse newAppointment(com.proto.appointment.AppointmentRequest request) {
+    public com.proto.appointment.NewAppointmentResponse newAppointment(com.proto.appointment.NewAppointmentRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getNewAppointmentMethod(), getCallOptions(), request);
     }
 
     /**
-     * @return
      */
-    public Iterator<ViewAppointmentsResponse> viewAppointments(
-        ViewAppointmentsRequest request) {
+    public java.util.Iterator<com.proto.appointment.ViewAppointmentsResponse> viewAppointments(
+        com.proto.appointment.ViewAppointmentsRequest request) {
       return io.grpc.stub.ClientCalls.blockingServerStreamingCall(
           getChannel(), getViewAppointmentsMethod(), getCallOptions(), request);
     }
@@ -238,8 +235,8 @@ public final class AppointmentServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.proto.appointment.AppointmentResponse> newAppointment(
-        com.proto.appointment.AppointmentRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.proto.appointment.NewAppointmentResponse> newAppointment(
+        com.proto.appointment.NewAppointmentRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getNewAppointmentMethod(), getCallOptions()), request);
     }
@@ -266,16 +263,12 @@ public final class AppointmentServiceGrpc {
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_NEW_APPOINTMENT:
-          serviceImpl.newAppointment((com.proto.appointment.AppointmentRequest) request,
-              (io.grpc.stub.StreamObserver<com.proto.appointment.AppointmentResponse>) responseObserver);
+          serviceImpl.newAppointment((com.proto.appointment.NewAppointmentRequest) request,
+              (io.grpc.stub.StreamObserver<com.proto.appointment.NewAppointmentResponse>) responseObserver);
           break;
         case METHODID_VIEW_APPOINTMENTS:
-          try {
-            serviceImpl.viewAppointments((ViewAppointmentsRequest) request,
-                (io.grpc.stub.StreamObserver<ViewAppointmentsResponse>) responseObserver);
-          } catch (InterruptedException e) {
-            e.printStackTrace();
-          }
+          serviceImpl.viewAppointments((com.proto.appointment.ViewAppointmentsRequest) request,
+              (io.grpc.stub.StreamObserver<com.proto.appointment.ViewAppointmentsResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
