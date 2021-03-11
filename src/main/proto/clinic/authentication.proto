@@ -1,0 +1,63 @@
+syntax = "proto3";
+
+package authentication;
+
+option java_package = "com.proto.authentication";
+option java_multiple_files = true;
+
+message UserCredentials {
+  string email = 1;
+  string password = 2;
+}
+
+//Authenticate Method
+message AuthenticationRequest {
+  UserCredentials userCredentials = 1;
+}
+message AuthenticationResponse {
+  string result = 1;
+}
+
+//Register New User Method
+message NewUserRequest {
+  UserCredentials userCredentials = 1;
+}
+message NewUserResponse {
+  string result = 1;
+}
+
+//View All Registered Users Method
+message ViewUsersRequest {
+  string request = 1;
+}
+message ViewUsersResponse {
+  string result = 1;
+}
+
+//Update User Credentials Method
+message UpdateUserRequest {
+  UserCredentials userCredentials = 1;
+}
+message UpdateUserResponse {
+  string result = 1;
+}
+
+//Delete User Credentials Method
+message DeleteUserRequest {
+  string email = 1;
+}
+message DeleteUserResponse {
+  string result = 1;
+}
+
+service AuthenticationService {
+  rpc authentication(AuthenticationRequest) returns (AuthenticationResponse) {};
+
+  rpc newUser(NewUserRequest) returns (NewUserResponse) {};
+
+  rpc viewUsers(ViewUsersRequest) returns (stream ViewUsersResponse);
+
+  rpc updateUser(UpdateUserRequest) returns (UpdateUserResponse);
+
+  rpc deleteUser(DeleteUserRequest) returns (DeleteUserResponse);
+}
