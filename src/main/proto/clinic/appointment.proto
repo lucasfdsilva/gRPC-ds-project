@@ -21,6 +21,16 @@ message AppointmentResponse {
   string result = 1;
 }
 
+message ViewAppointmentsRequest {
+  string request = 1;
+}
+
+message ViewAppointmentsResponse {
+  string result = 1;
+}
+
 service AppointmentService {
-  rpc Appointment(AppointmentRequest) returns (AppointmentResponse) {};
+  rpc newAppointment(AppointmentRequest) returns (AppointmentResponse) {};
+
+  rpc viewAppointments(ViewAppointmentsRequest) returns (stream ViewAppointmentsResponse);
 }

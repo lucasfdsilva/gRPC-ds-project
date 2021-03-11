@@ -1,9 +1,6 @@
 package clinic.client;
 
-import com.proto.appointment.Appointment;
-import com.proto.appointment.AppointmentRequest;
-import com.proto.appointment.AppointmentResponse;
-import com.proto.appointment.AppointmentServiceGrpc;
+import com.proto.appointment.*;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 
@@ -11,6 +8,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Iterator;
 import java.util.Random;
 
 public class ClientGUI {
@@ -24,6 +22,7 @@ public class ClientGUI {
     private JButton loginButton;
     private JTextField usernameInput;
     private JTextField passwordInput;
+    private JButton viewAllAppointmentsButton;
 
     public ClientGUI() {
 
@@ -75,14 +74,46 @@ public class ClientGUI {
                         .build();
 
                 System.out.println("Sending & Receiving request to the server...");
-                AppointmentResponse appointmentResponse = appointmentClient.appointment(appointmentRequest);
+                AppointmentResponse appointmentResponse = appointmentClient.newAppointment(appointmentRequest);
 
-                System.out.println("Result: " + appointmentResponse.getResult());
+                System.out.println("Server Response: " + appointmentResponse.getResult());
+                JOptionPane.showMessageDialog(null, "Server Response: " + appointmentResponse.getResult());
 
                 System.out.println("Shutting down this channel");
                 channel.shutdown();
             }
         });
+
+
+        viewAllAppointmentsButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("Initializing a new gRPC Client");
+
+                System.out.println("Creating a new channel");
+                ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 50051)
+                        .usePlaintext()
+                        .build();
+
+                System.out.println("Creating Channel Sync stub");
+                AppointmentServiceGrpc.AppointmentServiceBlockingStub appointmentClient = AppointmentServiceGrpc.newBlockingStub(channel);
+
+                System.out.println("Defining a new request");
+                ViewAppointmentsRequest viewAppointmentRequest = ViewAppointmentsRequest.newBuilder()
+                        .build();
+
+                System.out.println("Receiving appointment details from the server...");
+                appointmentClient.viewAppointments(viewAppointmentRequest)
+                        .forEachRemaining(viewAppointmentsResponse -> {
+                            System.out.println(viewAppointmentsResponse.getResult());
+                        });
+            }
+        });
+
+
+
+
+
 
         //Service 2 (Authentication) Button invocation
         loginButton.addActionListener(new ActionListener() {
@@ -91,6 +122,7 @@ public class ClientGUI {
                 //do something
             }
         });
+
     }
 
     public static void main(String[] args) {

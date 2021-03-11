@@ -1,4 +1,4 @@
-package clinic.server;
+package clinic.services.appointment;
 
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
