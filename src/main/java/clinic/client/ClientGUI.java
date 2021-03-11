@@ -21,9 +21,10 @@ public class ClientGUI {
 
     private JButton loginButton;
     private JTextField usernameInput;
-    private JTextField passwordInput;
     private JButton viewAllAppointmentsButton;
     private JButton deleteAppointmentButton;
+    private JButton updateAppointmentButton;
+    private JPasswordField passwordInput;
 
     public ClientGUI() {
 
@@ -114,6 +115,13 @@ public class ClientGUI {
             }
         });
 
+        updateAppointmentButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                UpdateAppointmentGUI updateAppointmentGUI = new UpdateAppointmentGUI();
+                updateAppointmentGUI.startup();
+            }
+        });
 
         deleteAppointmentButton.addActionListener(new ActionListener() {
             @Override
@@ -124,6 +132,8 @@ public class ClientGUI {
         });
 
 
+
+
         //Service 2 (Authentication) Button invocation
         loginButton.addActionListener(new ActionListener() {
             @Override
@@ -131,6 +141,7 @@ public class ClientGUI {
                 //do something
             }
         });
+
 
 
     }

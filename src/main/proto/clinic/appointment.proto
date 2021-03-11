@@ -29,6 +29,14 @@ message ViewAppointmentsResponse {
   string result = 1;
 }
 
+//Update Appointment Details Method
+message UpdateAppointmentRequest {
+  Appointment appointment = 1;
+}
+message UpdateAppointmentResponse {
+  string result = 1;
+}
+
 //Delete Appointment Method
 message DeleteAppointmentRequest {
   int32 id = 1;
@@ -41,6 +49,8 @@ service AppointmentService {
   rpc newAppointment(NewAppointmentRequest) returns (NewAppointmentResponse) {};
 
   rpc viewAppointments(ViewAppointmentsRequest) returns (stream ViewAppointmentsResponse);
+
+  rpc updateAppointment(UpdateAppointmentRequest) returns (UpdateAppointmentResponse);
 
   rpc deleteAppointment(DeleteAppointmentRequest) returns (DeleteAppointmentResponse);
 }

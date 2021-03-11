@@ -76,6 +76,37 @@ public final class AppointmentServiceGrpc {
     return getViewAppointmentsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.proto.appointment.UpdateAppointmentRequest,
+      com.proto.appointment.UpdateAppointmentResponse> getUpdateAppointmentMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "updateAppointment",
+      requestType = com.proto.appointment.UpdateAppointmentRequest.class,
+      responseType = com.proto.appointment.UpdateAppointmentResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.proto.appointment.UpdateAppointmentRequest,
+      com.proto.appointment.UpdateAppointmentResponse> getUpdateAppointmentMethod() {
+    io.grpc.MethodDescriptor<com.proto.appointment.UpdateAppointmentRequest, com.proto.appointment.UpdateAppointmentResponse> getUpdateAppointmentMethod;
+    if ((getUpdateAppointmentMethod = AppointmentServiceGrpc.getUpdateAppointmentMethod) == null) {
+      synchronized (AppointmentServiceGrpc.class) {
+        if ((getUpdateAppointmentMethod = AppointmentServiceGrpc.getUpdateAppointmentMethod) == null) {
+          AppointmentServiceGrpc.getUpdateAppointmentMethod = getUpdateAppointmentMethod =
+              io.grpc.MethodDescriptor.<com.proto.appointment.UpdateAppointmentRequest, com.proto.appointment.UpdateAppointmentResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "updateAppointment"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.proto.appointment.UpdateAppointmentRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.proto.appointment.UpdateAppointmentResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new AppointmentServiceMethodDescriptorSupplier("updateAppointment"))
+              .build();
+        }
+      }
+    }
+    return getUpdateAppointmentMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.proto.appointment.DeleteAppointmentRequest,
       com.proto.appointment.DeleteAppointmentResponse> getDeleteAppointmentMethod;
 
@@ -171,6 +202,13 @@ public final class AppointmentServiceGrpc {
 
     /**
      */
+    public void updateAppointment(com.proto.appointment.UpdateAppointmentRequest request,
+        io.grpc.stub.StreamObserver<com.proto.appointment.UpdateAppointmentResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateAppointmentMethod(), responseObserver);
+    }
+
+    /**
+     */
     public void deleteAppointment(com.proto.appointment.DeleteAppointmentRequest request,
         io.grpc.stub.StreamObserver<com.proto.appointment.DeleteAppointmentResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteAppointmentMethod(), responseObserver);
@@ -192,6 +230,13 @@ public final class AppointmentServiceGrpc {
                 com.proto.appointment.ViewAppointmentsRequest,
                 com.proto.appointment.ViewAppointmentsResponse>(
                   this, METHODID_VIEW_APPOINTMENTS)))
+          .addMethod(
+            getUpdateAppointmentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.proto.appointment.UpdateAppointmentRequest,
+                com.proto.appointment.UpdateAppointmentResponse>(
+                  this, METHODID_UPDATE_APPOINTMENT)))
           .addMethod(
             getDeleteAppointmentMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -235,6 +280,14 @@ public final class AppointmentServiceGrpc {
 
     /**
      */
+    public void updateAppointment(com.proto.appointment.UpdateAppointmentRequest request,
+        io.grpc.stub.StreamObserver<com.proto.appointment.UpdateAppointmentResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateAppointmentMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
     public void deleteAppointment(com.proto.appointment.DeleteAppointmentRequest request,
         io.grpc.stub.StreamObserver<com.proto.appointment.DeleteAppointmentResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
@@ -273,6 +326,13 @@ public final class AppointmentServiceGrpc {
 
     /**
      */
+    public com.proto.appointment.UpdateAppointmentResponse updateAppointment(com.proto.appointment.UpdateAppointmentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateAppointmentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
     public com.proto.appointment.DeleteAppointmentResponse deleteAppointment(com.proto.appointment.DeleteAppointmentRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteAppointmentMethod(), getCallOptions(), request);
@@ -303,6 +363,14 @@ public final class AppointmentServiceGrpc {
 
     /**
      */
+    public com.google.common.util.concurrent.ListenableFuture<com.proto.appointment.UpdateAppointmentResponse> updateAppointment(
+        com.proto.appointment.UpdateAppointmentRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateAppointmentMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.proto.appointment.DeleteAppointmentResponse> deleteAppointment(
         com.proto.appointment.DeleteAppointmentRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -312,7 +380,8 @@ public final class AppointmentServiceGrpc {
 
   private static final int METHODID_NEW_APPOINTMENT = 0;
   private static final int METHODID_VIEW_APPOINTMENTS = 1;
-  private static final int METHODID_DELETE_APPOINTMENT = 2;
+  private static final int METHODID_UPDATE_APPOINTMENT = 2;
+  private static final int METHODID_DELETE_APPOINTMENT = 3;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -338,6 +407,10 @@ public final class AppointmentServiceGrpc {
         case METHODID_VIEW_APPOINTMENTS:
           serviceImpl.viewAppointments((com.proto.appointment.ViewAppointmentsRequest) request,
               (io.grpc.stub.StreamObserver<com.proto.appointment.ViewAppointmentsResponse>) responseObserver);
+          break;
+        case METHODID_UPDATE_APPOINTMENT:
+          serviceImpl.updateAppointment((com.proto.appointment.UpdateAppointmentRequest) request,
+              (io.grpc.stub.StreamObserver<com.proto.appointment.UpdateAppointmentResponse>) responseObserver);
           break;
         case METHODID_DELETE_APPOINTMENT:
           serviceImpl.deleteAppointment((com.proto.appointment.DeleteAppointmentRequest) request,
@@ -406,6 +479,7 @@ public final class AppointmentServiceGrpc {
               .setSchemaDescriptor(new AppointmentServiceFileDescriptorSupplier())
               .addMethod(getNewAppointmentMethod())
               .addMethod(getViewAppointmentsMethod())
+              .addMethod(getUpdateAppointmentMethod())
               .addMethod(getDeleteAppointmentMethod())
               .build();
         }

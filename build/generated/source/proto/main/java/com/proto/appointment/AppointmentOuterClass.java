@@ -40,6 +40,16 @@ public final class AppointmentOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_appointment_ViewAppointmentsResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_appointment_UpdateAppointmentRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_appointment_UpdateAppointmentRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_appointment_UpdateAppointmentResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_appointment_UpdateAppointmentResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_appointment_DeleteAppointmentRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -67,17 +77,23 @@ public final class AppointmentOuterClass {
       "intmentResponse\022\016\n\006result\030\001 \001(\t\"*\n\027ViewA" +
       "ppointmentsRequest\022\017\n\007request\030\001 \001(\t\"*\n\030V" +
       "iewAppointmentsResponse\022\016\n\006result\030\001 \001(\t\"" +
+      "I\n\030UpdateAppointmentRequest\022-\n\013appointme" +
+      "nt\030\001 \001(\0132\030.appointment.Appointment\"+\n\031Up" +
+      "dateAppointmentResponse\022\016\n\006result\030\001 \001(\t\"" +
       "&\n\030DeleteAppointmentRequest\022\n\n\002id\030\001 \001(\005\"" +
       "+\n\031DeleteAppointmentResponse\022\016\n\006result\030\001" +
-      " \001(\t2\270\002\n\022AppointmentService\022[\n\016newAppoin" +
+      " \001(\t2\234\003\n\022AppointmentService\022[\n\016newAppoin" +
       "tment\022\".appointment.NewAppointmentReques" +
       "t\032#.appointment.NewAppointmentResponse\"\000" +
       "\022a\n\020viewAppointments\022$.appointment.ViewA" +
       "ppointmentsRequest\032%.appointment.ViewApp" +
-      "ointmentsResponse0\001\022b\n\021deleteAppointment" +
-      "\022%.appointment.DeleteAppointmentRequest\032" +
-      "&.appointment.DeleteAppointmentResponseB" +
-      "\031\n\025com.proto.appointmentP\001b\006proto3"
+      "ointmentsResponse0\001\022b\n\021updateAppointment" +
+      "\022%.appointment.UpdateAppointmentRequest\032" +
+      "&.appointment.UpdateAppointmentResponse\022" +
+      "b\n\021deleteAppointment\022%.appointment.Delet" +
+      "eAppointmentRequest\032&.appointment.Delete" +
+      "AppointmentResponseB\031\n\025com.proto.appoint" +
+      "mentP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -113,14 +129,26 @@ public final class AppointmentOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_appointment_ViewAppointmentsResponse_descriptor,
         new java.lang.String[] { "Result", });
-    internal_static_appointment_DeleteAppointmentRequest_descriptor =
+    internal_static_appointment_UpdateAppointmentRequest_descriptor =
       getDescriptor().getMessageTypes().get(5);
+    internal_static_appointment_UpdateAppointmentRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_appointment_UpdateAppointmentRequest_descriptor,
+        new java.lang.String[] { "Appointment", });
+    internal_static_appointment_UpdateAppointmentResponse_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_appointment_UpdateAppointmentResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_appointment_UpdateAppointmentResponse_descriptor,
+        new java.lang.String[] { "Result", });
+    internal_static_appointment_DeleteAppointmentRequest_descriptor =
+      getDescriptor().getMessageTypes().get(7);
     internal_static_appointment_DeleteAppointmentRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_appointment_DeleteAppointmentRequest_descriptor,
         new java.lang.String[] { "Id", });
     internal_static_appointment_DeleteAppointmentResponse_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_appointment_DeleteAppointmentResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_appointment_DeleteAppointmentResponse_descriptor,

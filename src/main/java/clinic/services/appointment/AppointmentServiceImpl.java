@@ -71,6 +71,57 @@ public class AppointmentServiceImpl extends AppointmentServiceGrpc.AppointmentSe
     }
 
     @Override
+    public void updateAppointment(UpdateAppointmentRequest request, StreamObserver<UpdateAppointmentResponse> responseObserver) {
+        if(appointmentsList.size() == 0){
+            // Create the response if there are no appointments registered
+            String resultNoAppointments = "There are no registered appointments.";
+
+            UpdateAppointmentResponse response = UpdateAppointmentResponse.newBuilder()
+                    .setResult(resultNoAppointments)
+                    .build();
+            // Send Response
+            responseObserver.onNext(response);
+            // Complete the RPC call
+            responseObserver.onCompleted();
+        }
+
+        for (int i = 0; i <= appointmentsList.size(); i++){
+            Appointment appointmentDetails = (Appointment) appointmentsList.get(i);
+
+            if(appointmentDetails.getId() == request.getAppointment().getId()){
+                appointmentsList.set(i, request.getAppointment());
+
+                Appointment updatedAppointmentDetails = (Appointment) appointmentsList.get(i);
+
+                String result = "Appointment ID (" + request.getAppointment().getId() + ") Updated Successfully." +
+                        "\n New Appointment Details" +
+                        "\n" + updatedAppointmentDetails;
+                UpdateAppointmentResponse response = UpdateAppointmentResponse.newBuilder()
+                        .setResult(result)
+                        .build();
+
+                // Send Response
+                responseObserver.onNext(response);
+
+                // Complete the RPC call
+                responseObserver.onCompleted();
+            }
+        }
+
+        //Response if no appointment with specified ID was found
+        String result = "No appointment with ID (" + request.getAppointment().getId() + ") was found";
+        UpdateAppointmentResponse response = UpdateAppointmentResponse.newBuilder()
+                .setResult(result)
+                .build();
+
+        // Send Response
+        responseObserver.onNext(response);
+
+        // Complete the RPC call
+        responseObserver.onCompleted();
+    }
+
+    @Override
     public void deleteAppointment(DeleteAppointmentRequest request, StreamObserver<DeleteAppointmentResponse> responseObserver) {
 
         if(appointmentsList.size() == 0){
