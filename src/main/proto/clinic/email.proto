@@ -1,0 +1,16 @@
+syntax="proto3";
+
+option java_package = "com.proto.authentication";
+option java_multiple_files = true;
+
+message EmailRequest {
+  string userEmail = 1;
+}
+
+message EmailResponse {
+  string result = 1;
+}
+
+service UserRegistrationEmail {
+  rpc newEmail(EmailRequest) returns (EmailResponse) {};
+}
