@@ -4,7 +4,11 @@ import clinic.client.appointment.DeleteAppointmentGUI;
 import clinic.client.appointment.UpdateAppointmentGUI;
 import clinic.client.authentication.DeleteUserGUI;
 import clinic.client.authentication.UpdateUserGUI;
+import com.google.common.util.concurrent.ListenableFuture;
 import com.proto.appointment.*;
+import com.proto.email.SendEmailRequest;
+import com.proto.email.SendEmailResponse;
+import com.proto.email.UserRegistrationEmailGrpc;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 
@@ -33,6 +37,8 @@ public class ClientGUI {
     private JButton viewAllUsersButton;
     private JButton updateUserButton;
     private JButton deleteUserButton;
+    private JButton sendEmailButton;
+    private JTextField emailInputEmailService;
 
     public ClientGUI() {
 
@@ -154,6 +160,11 @@ public class ClientGUI {
                     return;
                 }
 
+                if(!email.contains("@") || !email.contains(".")){
+                    JOptionPane.showMessageDialog(null, "Email address invalid");
+                    return;
+                }
+
                 emailInput.setText("");
                 passwordInput.setText("");
 
@@ -196,6 +207,11 @@ public class ClientGUI {
 
                 if(email.isEmpty() || password.isEmpty()){
                     JOptionPane.showMessageDialog(null, "Missing Required Information");
+                    return;
+                }
+
+                if(!email.contains("@") || !email.contains(".")){
+                    JOptionPane.showMessageDialog(null, "Email address invalid");
                     return;
                 }
 
@@ -275,6 +291,52 @@ public class ClientGUI {
             public void actionPerformed(ActionEvent e) {
                 UpdateUserGUI updateUserGUI = new UpdateUserGUI();
                 updateUserGUI.startup();
+            }
+        });
+
+
+
+        //Service 3 - User Registration Email - NodeJS gRPC Server
+        sendEmailButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String email = emailInputEmailService.getText();
+
+                if(email.isEmpty()){
+                    JOptionPane.showMessageDialog(null, "Missing Email Address");
+                    return;
+                }
+
+                if(!email.contains("@") || !email.contains(".")){
+                    JOptionPane.showMessageDialog(null, "Email address invalid");
+                    return;
+                }
+
+                emailInput.setText("");
+
+                System.out.println("Initializing a new gRPC Client");
+
+                System.out.println("Creating a new channel");
+                ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 50053)
+                        .usePlaintext()
+                        .build();
+
+                System.out.println("Creating Channel Sync stub");
+                UserRegistrationEmailGrpc.UserRegistrationEmailBlockingStub userRegistrationEmailService = UserRegistrationEmailGrpc.newBlockingStub(channel);
+
+                System.out.println("Defining a new request");
+                SendEmailRequest sendEmailRequest = SendEmailRequest.newBuilder()
+                        .setUserEmail(email)
+                        .build();
+
+                System.out.println("Sending Email Address details to the NodeJS gRPC User Registration Email Server...");
+                SendEmailResponse sendEmailResponse = userRegistrationEmailService.newEmail(sendEmailRequest);
+
+                System.out.println("Server Response: " + sendEmailResponse.getResult());
+                JOptionPane.showMessageDialog(null, "Server Response: " + sendEmailResponse.getResult());
+
+                System.out.println("Shutting down this channel");
+                channel.shutdown();
             }
         });
     }

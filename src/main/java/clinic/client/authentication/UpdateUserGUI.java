@@ -38,6 +38,11 @@ public class UpdateUserGUI {
                     return;
                 }
 
+                if(!email.contains("@") || !email.contains(".")){
+                    JOptionPane.showMessageDialog(null, "Email address invalid");
+                    return;
+                }
+
                 emailInput.setText("");
                 passwordInput.setText("");
 

@@ -30,6 +30,16 @@ public class DeleteUserGUI {
             public void actionPerformed(ActionEvent e) {
                 String email = emailInput.getText();
 
+                if(!email.isEmpty()){
+                    JOptionPane.showMessageDialog(null, "Missing Email Address");
+                    return;
+                }
+
+                if(!email.contains("@") || !email.contains(".")){
+                    JOptionPane.showMessageDialog(null, "Email address invalid");
+                    return;
+                }
+
                 System.out.println("Initializing a new gRPC Client");
 
                 System.out.println("Creating a new channel");
