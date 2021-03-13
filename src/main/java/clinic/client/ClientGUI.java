@@ -39,6 +39,7 @@ public class ClientGUI {
     private JButton deleteUserButton;
     private JButton sendEmailButton;
     private JTextField emailInputEmailService;
+    private JButton logoutButton;
 
     public ClientGUI() {
 
@@ -218,7 +219,8 @@ public class ClientGUI {
                 emailInput.setText("");
                 passwordInput.setText("");
 
-                System.out.println("Initializing a new gRPC Client");
+                // Sending Request to Register the user (Service 2)
+                System.out.println("Initializing a new gRPC Client for the Register User Service");
 
                 System.out.println("Creating a new channel");
                 ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 50052)
@@ -247,6 +249,33 @@ public class ClientGUI {
 
                 System.out.println("Shutting down this channel");
                 channel.shutdown();
+
+                if(newUserResponse.getResult().contains("Successfully")) {
+                    // Sending Request to the User Registration Email Confirmation Service (Service 3 - NodeJS)
+                    System.out.println("Initializing a new gRPC Client for the User Registration Confirmation Email Service");
+
+                    System.out.println("Creating a new User Registration Email Service Channel");
+                    ManagedChannel emailServiceChannel = ManagedChannelBuilder.forAddress("localhost", 50053)
+                            .usePlaintext()
+                            .build();
+
+                    System.out.println("Creating Channel Sync stub");
+                    UserRegistrationEmailGrpc.UserRegistrationEmailBlockingStub userRegistrationEmailService = UserRegistrationEmailGrpc.newBlockingStub(emailServiceChannel);
+
+                    System.out.println("Defining a new request");
+                    SendEmailRequest sendEmailRequest = SendEmailRequest.newBuilder()
+                            .setUserEmail(email)
+                            .build();
+
+                    System.out.println("Sending Email Address details to the NodeJS gRPC User Registration Email Server...");
+                    SendEmailResponse sendEmailResponse = userRegistrationEmailService.newEmail(sendEmailRequest);
+
+                    System.out.println("Server Response: " + sendEmailResponse.getResult());
+                    JOptionPane.showMessageDialog(null, "Server Response: " + sendEmailResponse.getResult());
+
+                    System.out.println("Shutting down this channel");
+                    channel.shutdown();
+                }
             }
         });
 
@@ -312,7 +341,7 @@ public class ClientGUI {
                     return;
                 }
 
-                emailInput.setText("");
+                emailInputEmailService.setText("");
 
                 System.out.println("Initializing a new gRPC Client");
 

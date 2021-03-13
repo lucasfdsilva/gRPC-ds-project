@@ -77,7 +77,7 @@ public class AuthenticationServiceImpl extends AuthenticationServiceGrpc.Authent
             for (int i = 0; i <= userCredentialsList.size(); i++){
                 UserCredentials userCredentials = (UserCredentials) userCredentialsList.get(i);
 
-                if(userCredentials.getEmail().equals(request.getUserCredentials().getEmail())){
+                if(userCredentials.getEmail().equals(userCredentialsOnRequest.getEmail())){
                     //Response if there's already an user registered using this email address
                     String result = "Email Address already registered. Please use another email address.";
                     NewUserResponse response = NewUserResponse.newBuilder()
