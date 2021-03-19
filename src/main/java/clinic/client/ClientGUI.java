@@ -413,7 +413,7 @@ public class ClientGUI {
 
         JOptionPane.showMessageDialog(null, "Make sure All 3 Service Servers have been started before trying to use this GUI. \n" +
                 "Service 1 - Appointment (Java) - root/src/main/java/clinic/services/appointment/AppointmentServer.java \n" +
-                "Service 1 - Authentication/User Registration (Java) - root/src/main/java/clinic/services/authentication/AuthenticationServer.java \n" +
-                "Service 1 - User Registration Confirmation Email (NodeJS) - root/NodeJS-services/src/UserRegistrationEmailServer.js \n");
+                "Service 2 - Authentication/User Registration (Java) - root/src/main/java/clinic/services/authentication/AuthenticationServer.java \n" +
+                "Service 3 - User Registration Confirmation Email (NodeJS) - root/NodeJS-services/src/UserRegistrationEmailServer.js \n");
     }
 }
