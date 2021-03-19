@@ -45,7 +45,6 @@ public class ClientGUI {
     private JButton deleteUserButton;
     private JButton sendEmailButton;
     private JTextField emailInputEmailService;
-    private JButton logoutButton;
 
     // Implementing jmDNS on the Client GUI
     public static class SampleListener implements ServiceListener {
@@ -411,5 +410,10 @@ public class ClientGUI {
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
+
+        JOptionPane.showMessageDialog(null, "Make sure All 3 Service Servers have been started before trying to use this GUI. \n" +
+                "Service 1 - Appointment (Java) - root/src/main/java/clinic/services/appointment/AppointmentServer.java \n" +
+                "Service 1 - Authentication/User Registration (Java) - root/src/main/java/clinic/services/authentication/AuthenticationServer.java \n" +
+                "Service 1 - User Registration Confirmation Email (NodeJS) - root/NodeJS-services/src/UserRegistrationEmailServer.js \n");
     }
 }
