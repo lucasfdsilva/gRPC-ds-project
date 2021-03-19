@@ -15,4 +15,4 @@ The remote services publish themselves to DNS and the Client discovers all avail
   * root/src/main/java/clinic/client/ClientGUI.java
 4. Use the GUI to interact with the services accordingly
 
-![alt text](https://github.com/lucasfdsilva/gRPC-ds-project/blob/master/images/gui-screenshot.jpg?raw=true)
+![Client GUI Screenshot](https://github.com/lucasfdsilva/gRPC-ds-project/blob/master/images/gui-screenshot.jpg?raw=true)
