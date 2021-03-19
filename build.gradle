@@ -32,6 +32,8 @@ dependencies {
     implementation 'io.grpc:grpc-protobuf:1.36.0'
     implementation 'io.grpc:grpc-stub:1.36.0'
 
+    implementation group: 'javax.jmdns', name: 'jmdns', version: '3.2.2'
+
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
 }

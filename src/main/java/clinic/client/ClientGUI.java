@@ -12,10 +12,16 @@ import com.proto.email.UserRegistrationEmailGrpc;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 
+import javax.jmdns.JmDNS;
+import javax.jmdns.ServiceEvent;
+import javax.jmdns.ServiceListener;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.util.Random;
 
 public class ClientGUI {
@@ -41,8 +47,23 @@ public class ClientGUI {
     private JTextField emailInputEmailService;
     private JButton logoutButton;
 
-    public ClientGUI() {
+    // Implementing jmDNS on the Client GUI
+    public static class SampleListener implements ServiceListener {
+        @Override
+        public void serviceAdded ( ServiceEvent event ) {
+            System.out.println("Service added: " + event.getInfo ());
+        }
+        @Override
+        public void serviceRemoved ( ServiceEvent event ) {
+            System.out.println("Service removed: " + event.getInfo ());
+        }
+        @Override
+        public void serviceResolved ( ServiceEvent event ) {
+            System.out.println("Service resolved: " + event.getInfo());
+        }
+    }
 
+    public ClientGUI() {
         //Service 1 (Appointment) Button invocation
         createAppointmentButton.addActionListener(new ActionListener() {
             @Override
@@ -373,10 +394,22 @@ public class ClientGUI {
     public static void main(String[] args) {
         JFrame frame = new JFrame("Lucas' Clinic Services");
         frame.setContentPane(new ClientGUI().mainPanel);
-        frame.setPreferredSize(new Dimension(800,600));
+        frame.setPreferredSize(new Dimension(800, 600));
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
+
+        try {
+            // Create a JmDNS instance
+
+            JmDNS jmdns = JmDNS.create(InetAddress.getLocalHost());
+            // Add a service listener
+            jmdns.addServiceListener("_http._tcp.local.", new SampleListener());
+        } catch (UnknownHostException e) {
+            System.out.println(e.getMessage());
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }
